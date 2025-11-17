@@ -7,86 +7,37 @@
         font-size: 16px; line-height: 1.6;
         display:flex; flex-direction:column; min-height:100vh
     }
-    
-    .container {
-        width: 95%;
-        max-width: 1600px; /* Define a largura máxima do dashboard */
-        margin: 0 auto; /* Centraliza o dashboard */
-    }
-
-    header{background-color:#fff;border-bottom:1px solid #ddd;padding:15px 0;
-        box-shadow:0 1px 3px rgba(0,0,0,.05)
-    }
-    
-    /* <<< CORREÇÃO DE CENTRALIZAÇÃO */
-    header .container { 
-        padding: 0 20px; 
-        text-align: center; 
-    }
-    
+    .container { width: 95%; max-width: 1600px; margin: 0 auto; }
+    header{background-color:#fff;border-bottom:1px solid #ddd;padding:15px 0; box-shadow:0 1px 3px rgba(0,0,0,.05) }
+    header .container { padding: 0 20px; text-align: center; }
     h1{margin:0;color:#2c3e50;font-size:1.5em}
     .subtitle{font-size:.9em;color:#7f8c8d;margin-top:2px}
     .main-content{flex:1; padding: 20px 0;}
-    
     .kpi-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:20px}
-    .kpi-card{background-color:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 4px rgba(0,0,0,.08);border-left:5px solid;
-        text-align: center;
-    }
-    .kpi-card .value{
-        font-size: 2.2em; font-weight: 700;
-        display:block;margin-bottom:5px
-    }
-    .kpi-card .label{
-        font-size: 1em; color:#555;text-transform:uppercase;
-        letter-spacing: 0.5px;
-    }
+    .kpi-card{background-color:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 4px rgba(0,0,0,.08);border-left:5px solid; text-align: center; }
+    .kpi-card .value{ font-size: 2.2em; font-weight: 700; display:block;margin-bottom:5px }
+    .kpi-card .label{ font-size: 1em; color:#555;text-transform:uppercase; letter-spacing: 0.5px; }
     .kpi-card.online{border-left-color:#27ae60}.kpi-card.online .value{color:#27ae60}
     .kpi-card.offline{border-left-color:#e74c3c}.kpi-card.offline .value{color:#e74c3c}
     .kpi-card.total{border-left-color:#3498db}.kpi-card.total .value{color:#3498db}
-    .kpi-card.rate{border-left-color:#f39c12}.kpi-card.rate .value{color:#f39c12}
-    
+    .kpi-card.rate{border-left-color:#27ae60}.kpi-card.rate .value{color:#27ae60}
     .controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;background-color:#fff;padding:15px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.08)}
-    .tab-nav button{
-        font-size: 1.1em; padding:10px 15px;border:none;background-color:transparent;color:#555;cursor:pointer;border-bottom:3px solid transparent;margin-right:10px;font-weight:600
-    }
+    .tab-nav button{ font-size: 1.1em; padding:10px 15px;border:none;background-color:transparent;color:#555;cursor:pointer;border-bottom:3px solid transparent;margin-right:10px;font-weight:600 }
     .tab-nav button.active{color:#3498db;border-bottom-color:#3498db}
-    .search-box{display:flex;gap:10px}
     #search{padding:10px 15px;border-radius:6px;border:1px solid #ddd;font-size:1em;width:300px}
     .toggle-dark-mode{padding:10px 15px;border:none;border-radius:6px;background-color:#7f8c8d;color:white;cursor:pointer;font-size:1em;transition:background-color .3s}
     .toggle-dark-mode:hover{background-color:#5f6f7d}
-    
     .tab-content{display:none;background-color:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.08);overflow:hidden}
     .tab-content.active{display:block}
-    
     table{width:100%;border-collapse:collapse}
-    th,td{
-        padding: 14px 16px;
-        border-bottom:1px solid #eee;
-        font-size: 0.95em;
-        text-align: center; /* <<< CORREÇÃO DE CENTRALIZAÇÃO */
-    }
-    
-    /* (Alinha a primeira coluna (Status) e a segunda (Prefixo) de volta à esquerda) */
-    th:first-child, td:first-child,
-    th:nth-child(2), td:nth-child(2) {
-        text-align: left;
-    }
-    
-    th{
-        background-color:#f9f9f9;
-        font-size: .9em; text-transform:uppercase;color:#555;
-        font-weight: 700;
-    }
+    th,td{ padding: 14px 16px; border-bottom:1px solid #eee; font-size: 0.95em; text-align: center; }
+    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+    th{ background-color:#f9f9f9; font-size: .9em; text-transform:uppercase;color:#555; font-weight: 700; }
     tr:hover{background-color:#f5f7fa}
-    .status{
-        font-weight: 700; padding:4px 8px;border-radius:12px;color:white;font-size:.85em;text-align:center;
-        min-width: 110px; 
-        display: inline-block;
-    }
+    .status{ font-weight: 700; padding:4px 8px;border-radius:12px;color:white;font-size:.85em;text-align:center; min-width: 110px; display: inline-block; }
     .status-offline{background-color:#e74c3c}
     .details-link{color:#3498db;text-decoration:none;font-weight:600}
     .details-link:hover{text-decoration:underline}
-    
     .grid-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px;padding:20px}
     .vehicle{background-color:#fdfdfd;padding:15px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.05);cursor:pointer;transition:all .3s;border:1px solid #eee}
     .vehicle:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
@@ -95,7 +46,6 @@
     .vehicle-status{font-size:.8em;padding:3px 8px;border-radius:12px;text-transform:uppercase}
     .vehicle-status.status-online{background-color:rgba(39,174,96,.1);color:#27ae60}
     .timestamp{display:block;font-size:13px;color:#7f8c8d}
-    
     .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);overflow:auto;animation:fadeIn .3s}
     .modal-content{background-color:#fefefe;margin:5% auto;padding:25px;border-radius:10px;width:85%;max-width:800px;box-shadow:0 5px 20px rgba(0,0,0,.2);animation:slideIn .3s}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -109,124 +59,62 @@
     .periodo-emoji{margin-right:8px}
     .no-results{text-align:center;padding:30px;color:#7f8c8d;font-style:italic;display:none}
     .dark-mode{background-color:#1a1a1a;color:#e0e0e0}.dark-mode header,.dark-mode .kpi-card,.dark-mode .controls,.dark-mode .tab-content{background-color:#2d2d2d;color:#e0e0e0;border-color:#444}.dark-mode h1,.dark-mode .modal-header h2{color:#f5f5f5}.dark-mode .tab-nav button{color:#aaa}.dark-mode .tab-nav button.active{color:#3498db;border-bottom-color:#3498db}.dark-mode #search{background-color:#333;color:#fff;border-color:#444}.dark-mode .toggle-dark-mode{background-color:#555}.dark-mode .kpi-card{box-shadow:0 2px 4px rgba(0,0,0,.3)}.dark-mode table, .dark-mode th, .dark-mode td{border-color:#444}.dark-mode th{background-color:#333;color:#ccc}.dark-mode tr:nth-child(even){background-color:#2a2a2a}.dark-mode tr:hover{background-color:#3a3a3a}.dark-mode .vehicle{background-color:#333;border-color:#444;box-shadow:0 1px 3px rgba(0,0,0,.2)}.dark-mode .vehicle-prefix{color:#eee}.dark-mode .modal-content{background-color:#2d2d2d}.dark-mode .modal-header{border-color:#444}.dark-mode .vehicle-details strong{color:#aaa}.dark-mode .comunicacoes-list{background-color:#252525;border-color:#444}.dark-mode .comunicacao-item{border-bottom-color:#444}.dark-mode .close:hover{color:white}
-    .dark-mode th:first-child, .dark-mode td:first-child,
-    .dark-mode th:nth-child(2), .dark-mode td:nth-child(2) {
-        text-align: left;
-    }
+    .dark-mode th:first-child, .dark-mode td:first-child, .dark-mode th:nth-child(2), .dark-mode td:nth-child(2) { text-align: left; }
 </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Dashboard de Comunicação da Frota</h1>
-            <p class="subtitle">REQUINTE - Gerado em 10/11/2025 às 13:49:53</p>
+            <h1>Comunicação da Frota</h1>
+            <p class="subtitle">REQUINTE - Gerado em 17/11/2025 às 18:58:38</p>
         </div>
     </header>
 
     <div class="main-content container">
         <div class="kpi-container">
-            <div class="kpi-card online">
-                <span class="value">5</span>
-                <span class="label">Ativos</span>
-            </div>
-            <div class="kpi-card offline">
-                <span class="value">1</span>
-                <span class="label">Inativos</span>
-            </div>
-            <div class="kpi-card total">
-                <span class="value">6</span>
-                <span class="label">Total Frota</span>
-            </div>
-            <div class="kpi-card rate">
-                <span class="value">83.3%</span>
-                <span class="label">Taxa de Comunicação</span>
-            </div>
+            <div class="kpi-card online"><span class="value">2</span><span class="label">Ativos</span></div>
+            <div class="kpi-card offline"><span class="value">0</span><span class="label">Inativos</span></div>
+            <div class="kpi-card total"><span class="value">2</span><span class="label">Total Frota</span></div>
+            <div class="kpi-card rate"><span class="value">100.0%</span><span class="label">Taxa de Comunicação</span></div>
         </div>
 
         <div class="controls">
             <div class="tab-nav">
-                <button onclick="showTab('inativos')" class="active">Inativos (1)</button>
-                <button onclick="showTab('ativos')">Ativos (5)</button>
+                <button onclick="showTab('inativos')" class="active">Inativos (0)</button>
+                <button onclick="showTab('ativos')">Ativos (2)</button>
             </div>
-            <div class="search-box">
-                <input type="text" id="search" placeholder="Buscar veículo..." onkeyup="searchVehicle()">
-                <button class="toggle-dark-mode" onclick="toggleDarkMode()">Modo Escuro</button>
             </div>
-        </div>
 
         <div id="inativos" class="tab-content active">
             <table>
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Prefixo</th>
-                        <th>Última Comunicação</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="inativos-body">
-                    
-                    <tr class="veiculo-item" data-veiculo-nome="202303">
-                        <td><span class="status status-offline">OFFLINE (18h 26m)</span></td>
-                        <td><strong>202303</strong></td>
-                        <td>🌆 09/11/2025 19:23</td>
-                        <td><a href="#" class="details-link" onclick="showVehicleDetails('202303')">Detalhes</a></td>
-                    </tr>
-                
-                </tbody>
+                <thead><tr><th>Status</th><th>Prefixo</th><th>Última Comunicação</th><th>Ações</th></tr></thead>
+                <tbody id="inativos-body"></tbody>
             </table>
             <div class="no-results" id="no-results-inativos">Nenhum veículo inativo encontrado.</div>
         </div>
-
         <div id="ativos" class="tab-content">
             <div class="grid-container" id="ativos-body">
-                
-                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="202301" onclick="showVehicleDetails('202301')">
-                    <div class="vehicle-header">
-                        <span class="vehicle-prefix">202301</span>
-                        <span class="vehicle-status status-online">ONLINE</span>
-                    </div>
-                    <span class="timestamp">Última: 🌤️ 10/11/2025 13:24</span>
-                </div>
                 <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="202302" onclick="showVehicleDetails('202302')">
                     <div class="vehicle-header">
                         <span class="vehicle-prefix">202302</span>
                         <span class="vehicle-status status-online">ONLINE</span>
                     </div>
-                    <span class="timestamp">Última: 🌙 10/11/2025 03:48</span>
+                    <span class="timestamp">Última: 🌆 17/11/2025 18:43</span>
                 </div>
                 <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="202304" onclick="showVehicleDetails('202304')">
                     <div class="vehicle-header">
                         <span class="vehicle-prefix">202304</span>
                         <span class="vehicle-status status-online">ONLINE</span>
                     </div>
-                    <span class="timestamp">Última: 🌤️ 10/11/2025 13:39</span>
-                </div>
-                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="202305" onclick="showVehicleDetails('202305')">
-                    <div class="vehicle-header">
-                        <span class="vehicle-prefix">202305</span>
-                        <span class="vehicle-status status-online">ONLINE</span>
-                    </div>
-                    <span class="timestamp">Última: 🌙 10/11/2025 04:37</span>
-                </div>
-                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="20961" onclick="showVehicleDetails('20961')">
-                    <div class="vehicle-header">
-                        <span class="vehicle-prefix">20961</span>
-                        <span class="vehicle-status status-online">ONLINE</span>
-                    </div>
-                    <span class="timestamp">Última: 🌙 10/11/2025 04:34</span>
-                </div>
-            </div>
+                    <span class="timestamp">Última: 🌆 17/11/2025 18:35</span>
+                </div></div>
             <div class="no-results" id="no-results-ativos">Nenhum veículo ativo encontrado.</div>
         </div>
     </div>
 
     <div id="vehicleModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Detalhes do Veículo</h2>
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
+            <div class="modal-header"><h2 id="modalTitle">Detalhes do Veículo</h2><span class="close" onclick="closeModal()">&times;</span></div>
             <div class="vehicle-details" id="vehicleDetails"></div>
             <h3>Histórico de Comunicações</h3>
             <div class="comunicacoes-list" id="comunicacoesList"></div>
@@ -234,46 +122,36 @@
     </div>
 
 <script>
-    const veiculoData = {"202301": {"serie": "66132.0", "versao": "91.13", "eod": "209.0"}, "202302": {"serie": "66864.0", "versao": "91.13", "eod": "209.0"}, "202303": {"serie": "66314.0", "versao": "91.13", "eod": "209.0"}, "202304": {"serie": "66531.0", "versao": "91.13", "eod": "209.0"}, "202305": {"serie": "66207.0", "versao": "91.13", "eod": "209.0"}, "20961": {"serie": "66293.0", "versao": "91.13", "eod": "209.0"}};
-    const comunicacoesData = {"202301": [{"dataHora": "10/11/2025 13:24:23", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 12:52:56", "tempoSegundos": "10.0"}, {"dataHora": "10/11/2025 12:09:19", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 10:48:10", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 10:23:42", "tempoSegundos": "159.0"}, {"dataHora": "10/11/2025 10:09:18", "tempoSegundos": "16.0"}, {"dataHora": "10/11/2025 09:54:59", "tempoSegundos": "159.0"}, {"dataHora": "10/11/2025 09:36:03", "tempoSegundos": "169.0"}, {"dataHora": "10/11/2025 09:22:11", "tempoSegundos": "164.0"}, {"dataHora": "10/11/2025 08:48:46", "tempoSegundos": "50.0"}, {"dataHora": "10/11/2025 08:45:32", "tempoSegundos": "167.0"}, {"dataHora": "10/11/2025 08:13:43", "tempoSegundos": "191.0"}, {"dataHora": "10/11/2025 08:07:08", "tempoSegundos": "195.0"}, {"dataHora": "10/11/2025 07:53:39", "tempoSegundos": "189.0"}, {"dataHora": "10/11/2025 07:41:06", "tempoSegundos": "180.0"}, {"dataHora": "10/11/2025 07:28:39", "tempoSegundos": "166.0"}, {"dataHora": "10/11/2025 07:13:05", "tempoSegundos": "166.0"}, {"dataHora": "10/11/2025 07:00:29", "tempoSegundos": "249.0"}, {"dataHora": "10/11/2025 06:47:19", "tempoSegundos": "158.0"}, {"dataHora": "10/11/2025 06:36:10", "tempoSegundos": "166.0"}, {"dataHora": "10/11/2025 06:23:36", "tempoSegundos": "187.0"}, {"dataHora": "10/11/2025 06:13:11", "tempoSegundos": "168.0"}, {"dataHora": "10/11/2025 05:39:34", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 05:09:17", "tempoSegundos": "19.0"}, {"dataHora": "10/11/2025 05:00:27", "tempoSegundos": "270.0"}, {"dataHora": "10/11/2025 04:56:51", "tempoSegundos": "213.0"}, {"dataHora": "10/11/2025 04:44:44", "tempoSegundos": "186.0"}, {"dataHora": "10/11/2025 04:02:13", "tempoSegundos": "167.0"}, {"dataHora": "10/11/2025 03:38:57", "tempoSegundos": "230.0"}, {"dataHora": "10/11/2025 03:34:29", "tempoSegundos": "160.0"}, {"dataHora": "10/11/2025 03:32:57", "tempoSegundos": "301.0"}, {"dataHora": "10/11/2025 03:25:29", "tempoSegundos": "489.0"}, {"dataHora": "10/11/2025 03:11:28", "tempoSegundos": "429.0"}, {"dataHora": "10/11/2025 02:55:48", "tempoSegundos": "166.0"}, {"dataHora": "10/11/2025 02:53:27", "tempoSegundos": "162.0"}, {"dataHora": "10/11/2025 02:42:14", "tempoSegundos": "408.0"}, {"dataHora": "10/11/2025 02:26:55", "tempoSegundos": "188.0"}, {"dataHora": "10/11/2025 02:15:16", "tempoSegundos": "756.0"}, {"dataHora": "10/11/2025 01:53:55", "tempoSegundos": "152.0"}, {"dataHora": "10/11/2025 01:40:37", "tempoSegundos": "21.0"}, {"dataHora": "10/11/2025 01:31:33", "tempoSegundos": "173.0"}, {"dataHora": "10/11/2025 00:46:24", "tempoSegundos": "10.0"}, {"dataHora": "10/11/2025 00:16:04", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 23:44:44", "tempoSegundos": "17.0"}, {"dataHora": "09/11/2025 23:12:16", "tempoSegundos": "21.0"}, {"dataHora": "09/11/2025 23:03:05", "tempoSegundos": "156.0"}, {"dataHora": "09/11/2025 22:29:47", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 21:57:05", "tempoSegundos": "12.0"}, {"dataHora": "09/11/2025 21:22:36", "tempoSegundos": "12.0"}, {"dataHora": "09/11/2025 21:17:23", "tempoSegundos": "157.0"}, {"dataHora": "09/11/2025 20:44:34", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 20:14:40", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 19:14:30", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 15:43:49", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 15:14:53", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 14:44:59", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 14:13:58", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 13:43:50", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 13:12:54", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 12:42:54", "tempoSegundos": "156.0"}, {"dataHora": "09/11/2025 12:42:27", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 12:10:14", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 11:40:12", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 11:09:49", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 10:39:58", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 10:09:54", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 09:32:27", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 09:02:48", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 08:32:28", "tempoSegundos": "68.0"}, {"dataHora": "09/11/2025 07:59:12", "tempoSegundos": "21.0"}, {"dataHora": "09/11/2025 07:29:08", "tempoSegundos": "20.0"}, {"dataHora": "09/11/2025 06:57:31", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 06:26:00", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 05:57:05", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 05:25:48", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 04:56:31", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 04:26:46", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 03:56:19", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 03:25:38", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 02:54:18", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 02:23:37", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 01:55:15", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 01:23:41", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 00:53:38", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 00:23:32", "tempoSegundos": "8.0"}], "202302": [{"dataHora": "10/11/2025 03:48:27", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 03:17:06", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 02:46:49", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 02:16:33", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 01:46:17", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 01:16:00", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 00:45:44", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 00:15:28", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 23:45:10", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 23:14:55", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 22:44:39", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 22:14:23", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 21:42:52", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 21:12:46", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 20:42:59", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 20:13:09", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 19:41:59", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 19:13:00", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 18:43:17", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 18:12:00", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 17:41:45", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 04:36:19", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 04:23:27", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 03:53:01", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 03:22:19", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 02:51:02", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 02:20:21", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 01:52:00", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 01:21:23", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 00:50:46", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 00:20:22", "tempoSegundos": "8.0"}], "202303": [{"dataHora": "09/11/2025 19:23:16", "tempoSegundos": "20.0"}, {"dataHora": "09/11/2025 18:08:56", "tempoSegundos": "162.0"}, {"dataHora": "09/11/2025 17:56:35", "tempoSegundos": "161.0"}, {"dataHora": "09/11/2025 17:42:16", "tempoSegundos": "206.0"}, {"dataHora": "09/11/2025 17:37:43", "tempoSegundos": "325.0"}, {"dataHora": "09/11/2025 17:22:25", "tempoSegundos": "180.0"}, {"dataHora": "09/11/2025 04:59:46", "tempoSegundos": "12.0"}, {"dataHora": "09/11/2025 04:50:07", "tempoSegundos": "12.0"}, {"dataHora": "09/11/2025 04:19:05", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 03:48:33", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 03:16:16", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 02:44:25", "tempoSegundos": "19.0"}, {"dataHora": "09/11/2025 02:13:33", "tempoSegundos": "70.0"}, {"dataHora": "09/11/2025 01:42:40", "tempoSegundos": "18.0"}, {"dataHora": "09/11/2025 01:11:51", "tempoSegundos": "18.0"}, {"dataHora": "09/11/2025 00:41:04", "tempoSegundos": "18.0"}], "202304": [{"dataHora": "10/11/2025 13:39:08", "tempoSegundos": "10.0"}, {"dataHora": "10/11/2025 04:10:42", "tempoSegundos": "18.0"}, {"dataHora": "10/11/2025 01:13:25", "tempoSegundos": "14.0"}, {"dataHora": "10/11/2025 00:43:03", "tempoSegundos": "16.0"}, {"dataHora": "10/11/2025 00:12:39", "tempoSegundos": "22.0"}, {"dataHora": "09/11/2025 23:42:10", "tempoSegundos": "23.0"}, {"dataHora": "09/11/2025 23:11:37", "tempoSegundos": "50.0"}, {"dataHora": "09/11/2025 22:32:32", "tempoSegundos": "26.0"}, {"dataHora": "09/11/2025 22:26:33", "tempoSegundos": "183.0"}, {"dataHora": "09/11/2025 22:13:44", "tempoSegundos": "157.0"}, {"dataHora": "09/11/2025 22:02:10", "tempoSegundos": "161.0"}, {"dataHora": "09/11/2025 21:14:37", "tempoSegundos": "43.0"}, {"dataHora": "09/11/2025 19:26:33", "tempoSegundos": "284.0"}, {"dataHora": "09/11/2025 18:50:40", "tempoSegundos": "44.0"}, {"dataHora": "09/11/2025 18:19:07", "tempoSegundos": "42.0"}, {"dataHora": "09/11/2025 17:44:17", "tempoSegundos": "49.0"}, {"dataHora": "09/11/2025 17:29:21", "tempoSegundos": "164.0"}, {"dataHora": "09/11/2025 16:56:15", "tempoSegundos": "203.0"}, {"dataHora": "09/11/2025 16:47:53", "tempoSegundos": "262.0"}, {"dataHora": "09/11/2025 16:31:57", "tempoSegundos": "22.0"}, {"dataHora": "09/11/2025 16:20:25", "tempoSegundos": "164.0"}, {"dataHora": "09/11/2025 16:08:18", "tempoSegundos": "152.0"}, {"dataHora": "09/11/2025 15:24:46", "tempoSegundos": "77.0"}, {"dataHora": "09/11/2025 08:24:34", "tempoSegundos": "166.0"}, {"dataHora": "09/11/2025 08:22:14", "tempoSegundos": "186.0"}, {"dataHora": "09/11/2025 08:16:34", "tempoSegundos": "25.0"}, {"dataHora": "09/11/2025 07:44:56", "tempoSegundos": "28.0"}, {"dataHora": "09/11/2025 07:32:46", "tempoSegundos": "405.0"}, {"dataHora": "09/11/2025 07:23:30", "tempoSegundos": "189.0"}], "202305": [{"dataHora": "10/11/2025 04:37:35", "tempoSegundos": "12.0"}, {"dataHora": "10/11/2025 04:07:05", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 22:39:40", "tempoSegundos": "173.0"}, {"dataHora": "09/11/2025 21:18:21", "tempoSegundos": "17.0"}, {"dataHora": "09/11/2025 21:01:53", "tempoSegundos": "151.0"}, {"dataHora": "09/11/2025 20:24:17", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 19:53:00", "tempoSegundos": "124.0"}, {"dataHora": "09/11/2025 19:21:16", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 19:19:23", "tempoSegundos": "372.0"}, {"dataHora": "09/11/2025 17:47:14", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 17:13:20", "tempoSegundos": "15.0"}, {"dataHora": "09/11/2025 17:02:27", "tempoSegundos": "177.0"}, {"dataHora": "09/11/2025 16:59:07", "tempoSegundos": "172.0"}, {"dataHora": "09/11/2025 16:57:12", "tempoSegundos": "158.0"}, {"dataHora": "09/11/2025 16:45:13", "tempoSegundos": "260.0"}, {"dataHora": "09/11/2025 16:32:19", "tempoSegundos": "230.0"}, {"dataHora": "09/11/2025 16:19:51", "tempoSegundos": "167.0"}, {"dataHora": "09/11/2025 16:15:07", "tempoSegundos": "194.0"}, {"dataHora": "09/11/2025 15:40:38", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 15:11:42", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 14:41:50", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 14:10:01", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 13:41:09", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 13:10:49", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 12:39:44", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 12:09:21", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 11:39:21", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 11:08:58", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 10:39:08", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 10:09:05", "tempoSegundos": "10.0"}], "20961": [{"dataHora": "10/11/2025 04:34:21", "tempoSegundos": "9.0"}, {"dataHora": "10/11/2025 04:04:05", "tempoSegundos": "10.0"}, {"dataHora": "10/11/2025 03:33:18", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 03:01:54", "tempoSegundos": "9.0"}, {"dataHora": "10/11/2025 02:31:36", "tempoSegundos": "9.0"}, {"dataHora": "10/11/2025 02:01:17", "tempoSegundos": "11.0"}, {"dataHora": "10/11/2025 01:30:59", "tempoSegundos": "33.0"}, {"dataHora": "10/11/2025 01:00:17", "tempoSegundos": "10.0"}, {"dataHora": "10/11/2025 00:29:59", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 23:59:42", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 23:29:25", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 22:59:07", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 22:28:48", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 21:58:03", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 21:26:36", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 20:56:37", "tempoSegundos": "142.0"}, {"dataHora": "09/11/2025 20:25:23", "tempoSegundos": "56.0"}, {"dataHora": "09/11/2025 19:53:20", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 19:23:34", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 18:53:48", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 18:24:07", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 17:51:20", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 17:10:51", "tempoSegundos": "113.0"}, {"dataHora": "09/11/2025 16:38:39", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 16:08:22", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 15:36:34", "tempoSegundos": "12.0"}, {"dataHora": "09/11/2025 15:34:37", "tempoSegundos": "318.0"}, {"dataHora": "09/11/2025 15:00:32", "tempoSegundos": "47.0"}, {"dataHora": "09/11/2025 14:30:01", "tempoSegundos": "164.0"}, {"dataHora": "09/11/2025 14:18:02", "tempoSegundos": "165.0"}, {"dataHora": "09/11/2025 14:15:05", "tempoSegundos": "225.0"}, {"dataHora": "09/11/2025 14:11:28", "tempoSegundos": "263.0"}, {"dataHora": "09/11/2025 13:37:42", "tempoSegundos": "31.0"}, {"dataHora": "09/11/2025 13:06:57", "tempoSegundos": "75.0"}, {"dataHora": "09/11/2025 13:05:56", "tempoSegundos": "161.0"}, {"dataHora": "09/11/2025 12:30:11", "tempoSegundos": "27.0"}, {"dataHora": "09/11/2025 12:00:06", "tempoSegundos": "38.0"}, {"dataHora": "09/11/2025 11:28:11", "tempoSegundos": "63.0"}, {"dataHora": "09/11/2025 11:25:12", "tempoSegundos": "165.0"}, {"dataHora": "09/11/2025 10:51:15", "tempoSegundos": "14.0"}, {"dataHora": "09/11/2025 10:17:13", "tempoSegundos": "20.0"}, {"dataHora": "09/11/2025 09:46:20", "tempoSegundos": "21.0"}, {"dataHora": "09/11/2025 09:17:12", "tempoSegundos": "38.0"}, {"dataHora": "09/11/2025 08:45:18", "tempoSegundos": "19.0"}, {"dataHora": "09/11/2025 08:13:37", "tempoSegundos": "15.0"}, {"dataHora": "09/11/2025 07:45:10", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 07:14:43", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 06:44:00", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 06:13:00", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 05:42:33", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 05:12:44", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 04:43:52", "tempoSegundos": "12.0"}, {"dataHora": "09/11/2025 00:33:46", "tempoSegundos": "15.0"}, {"dataHora": "09/11/2025 00:03:28", "tempoSegundos": "39.0"}]};
+    const veiculoData = {"202302": {"serie": "66864.0", "versao": "91.13", "eod": "212.0"}, "202304": {"serie": "66531.0", "versao": "91.13", "eod": "212.0"}};
+    const comunicacoesData = {"202302": [{"dataHora": "17/11/2025 18:43:14", "tempoSegundos": "21.0"}], "202304": [{"dataHora": "17/11/2025 18:35:16", "tempoSegundos": "18.0"}]};
     let currentTab = 'inativos';
-
     function showTab(tabName) {
         currentTab = tabName;
         document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
         document.getElementById(tabName).classList.add('active');
         document.querySelectorAll('.tab-nav button').forEach(btn => btn.classList.remove('active'));
         document.querySelector(`.tab-nav button[onclick="showTab('${tabName}')"]`).classList.add('active');
-        searchVehicle();
+        // searchVehicle(); // (Desabilitado pois não há input search no HTML)
     }
-
+    /*
     function searchVehicle() {
         const searchTerm = document.getElementById('search').value.toLowerCase();
         const containerId = currentTab + '-body';
         const noResultsId = 'no-results-' + currentTab;
-        
         const items = document.getElementById(containerId).querySelectorAll('.veiculo-item');
         let hasResults = false;
-        
         items.forEach(item => {
             const veiculoId = item.getAttribute('data-veiculo-nome').toLowerCase();
             const matchesSearch = searchTerm === '' || veiculoId.includes(searchTerm);
-            
             if (matchesSearch) {
                 item.style.display = (currentTab === 'inativos') ? 'table-row' : 'block';
                 hasResults = true;
-            } else {
-                item.style.display = 'none';
-            }
+            } else { item.style.display = 'none'; }
         });
-
         document.getElementById(noResultsId).style.display = hasResults ? 'none' : 'block';
     }
-
-    function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-    }
-    
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
+    */
     const modal = document.getElementById('vehicleModal');
     function showVehicleDetails(prefixo) {
         const modalTitle = document.getElementById('modalTitle');
@@ -281,7 +159,6 @@
         const comunicacoesList = document.getElementById('comunicacoesList');
         const veiculo = veiculoData[prefixo] || {};
         const comunicacoes = comunicacoesData[prefixo] || [];
-        
         modalTitle.textContent = `Veículo ${prefixo}`;
         vehicleDetails.innerHTML = `
             <div><strong>Prefixo:</strong> ${prefixo}</div>
@@ -301,11 +178,7 @@
         } else { comunicacoesList.innerHTML = '<div>Nenhuma comunicação registrada</div>'; }
         modal.style.display = 'block';
     }
-    
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-    
+    function closeModal() { modal.style.display = 'none'; }
     function getPeriodoEmoji(date) {
         if (!date || isNaN(date)) return '';
         const hora = date.getHours();
@@ -314,11 +187,8 @@
         if (hora >= 12 && hora < 18) return "🌤️";
         return "🌆";
     }
-    
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
+        if (event.target == modal) { modal.style.display = 'none'; }
     }
     document.addEventListener('DOMContentLoaded', () => {
         showTab('inativos');
